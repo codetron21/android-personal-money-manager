@@ -8,13 +8,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import com.codetron.personalmoneymanagerapp.R
 
-val RalewayFontFamily = FontFamily(
+private val RalewayFontFamily = FontFamily(
     Font(R.font.raleway_bold, weight = FontWeight.Bold),
     Font(R.font.raleway_light, weight = FontWeight.Light),
     Font(R.font.raleway_regular)
 )
 
-val QuestrialFontFamily = FontFamily(
+private val QuestrialFontFamily = FontFamily(
     Font(R.font.questrial_regular)
 )
 

@@ -5,7 +5,6 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -22,23 +21,20 @@ import com.codetron.personalmoneymanagerapp.ui.theme.PersonalMoneyManagerAppThem
 import com.codetron.personalmoneymanagerapp.ui.theme.PersonalMoneyManagerTextStyle
 
 @Composable
-fun SplashScreen() {
-    Surface(
-        modifier = Modifier
-            .fillMaxSize(),
-    ) {
+fun SplashScreen(modifier: Modifier = Modifier) {
         Box(
-            modifier = Modifier.padding(16.dp)
+            modifier = modifier
+                .fillMaxSize()
+                .background(MaterialTheme.colors.background)
+                .padding(16.dp)
         ) {
             AppBrand(modifier = Modifier.align(Alignment.Center))
             AppVersion(modifier = Modifier.align(Alignment.BottomCenter))
         }
-    }
-
 }
 
 @Composable
-@Preview(name = "App Brand", showBackground = true)
+@Preview(name = "app-brand", showBackground = true)
 private fun AppBrand(modifier: Modifier = Modifier) {
     Column(
         modifier = modifier,
@@ -60,12 +56,13 @@ private fun AppBrand(modifier: Modifier = Modifier) {
             style = MaterialTheme.typography.h1,
             textAlign = TextAlign.Center,
             fontWeight = FontWeight.Bold,
+            color = MaterialTheme.colors.primary
         )
     }
 }
 
 @Composable
-@Preview(name = "App Version", showBackground = true)
+@Preview(name = "app-version", showBackground = true)
 private fun AppVersion(modifier: Modifier = Modifier) {
     Text(
         text = stringResource(id = R.string.app_version),
@@ -75,7 +72,7 @@ private fun AppVersion(modifier: Modifier = Modifier) {
 }
 
 @Composable
-@Preview(name = "Splash Screen", showBackground = true)
+@Preview(name = "splash-screen", showBackground = true)
 private fun SplashScreen_Preview() {
     PersonalMoneyManagerAppTheme {
         SplashScreen()
